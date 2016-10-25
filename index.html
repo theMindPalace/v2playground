@@ -12,8 +12,10 @@
       </section>
       <section>
         <h3>Databinding , v-model and computed properties </h3>
-        {{greetings}} <input type="text" v-model="name" value="">
-        <p>
+        <div class="col-md-3">
+          {{greetings}} <input class="form-control" type="text" v-model="name" value="">
+        </div>
+        <p >
 
           <p v-html="rawHtml">
 
@@ -21,6 +23,29 @@
         </p>
         <p v-bind:title="greetings">
           {{greetings}}
+        </p>
+      </section>
+      <section>
+        <h3>Conditional</h3>
+        <p>
+          Are you feel better? <input type="checkbox" v-model="feelBetter" value="">
+        </p>
+        <p class="alert alert-info" v-if="feelBetter">
+          Cool, You'r Awesome!!!!!
+        </p>
+        <p class="alert alert-danger" v-else>
+          Ooops , take rest.
+        </p>
+      </section>
+
+      <section>
+        <h3>Loops</h3>
+        <p class="hb">
+          Todos
+          <ul class="list-group">
+            <li class="list-group-item" v-for="todo in todos">{{todo}}</li>
+          </ul>
+
         </p>
       </section>
 
