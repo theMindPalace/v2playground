@@ -1,0 +1,21 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  font-family: 'Helvetica';
+}
+
+body{
+  background-color: #ccc;
+}
+#app{
+  width:80%;
+  margin:0 auto;
+}
+section{
+  margin-top:1em;
+  padding: .5em;
+  background-color: #fff;
+}
