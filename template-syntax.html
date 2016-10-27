@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>v2</title>
     <link rel="stylesheet" href="src/css/style.css" media="screen" title="no title">
+    <style media="screen">
+      button:disabled{
+        background: #ddd;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -19,6 +24,7 @@
         <li><a href="computed-watchers.html">Computed & Watchers</a></li>
 
 
+
       </ul>
 
     </div><!-- /.navbar-collapse -->
@@ -26,23 +32,47 @@
 </nav>
     <div id="app" class="container">
       <div class="page-header">
-        <h1>{{pageTitle}}</h1>
+        <h1>Template Syntax</h1>
       </div>
 
       <section>
-        <h3>Global components</h3>
-        <hello></hello>
+        <h4>v-once</h4>
+        <p v-once>This will never chnage {{name}}</p>
+        <input type="text" v-model="name" value="">
+
+        <h4>Bind Attributes value</h4>
+        <p v-bind:id="name" v-bind:class="name" v-bind:title="'Hello '+name">This elements id is sarath
+        </p>
+        <div class="">
+          Check here <input type="checkbox" v-model="enableButton" value=""> to enable button
+          <button type="button" name="button" v-bind:disabled="!enableButton">Button</button>
+        </div>
+
       </section>
+
       <section>
-        <h3>Components with props</h3>
-        <todo-list v-bind:todos="todoitems"></todo-list>
+        <h3>Javascript Expressions</h3>
+        <p>
+          Adding number {{ number+ 1 }}
+        </p>
+        <p>
+          {{sex=='m' ? 'Male' : 'Female'}}
+        </p>
+        <p>
+
+        </p>
+      </section>
+
+      <section>
+        <h3>Filters</h3>
+        {{sometext | capitalize | showlength }}
       </section>
 
 
 
     </div>
     <script src="./libs/vue.js" charset="utf-8"></script>
-    <script src="./src/components.js" charset="utf-8"></script>
+    <script src="./src/template-syntax.js" charset="utf-8"></script>
 
   </body>
 </html>

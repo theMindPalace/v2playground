@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>v2</title>
     <link rel="stylesheet" href="src/css/style.css" media="screen" title="no title">
+    <style media="screen">
+      button:disabled{
+        background: #ddd;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -26,23 +31,39 @@
 </nav>
     <div id="app" class="container">
       <div class="page-header">
-        <h1>{{pageTitle}}</h1>
+        <h1>Computed & Watchers </h1>
       </div>
 
       <section>
-        <h3>Global components</h3>
-        <hello></hello>
-      </section>
-      <section>
-        <h3>Components with props</h3>
-        <todo-list v-bind:todos="todoitems"></todo-list>
+        <h3>Computed Property</h3>
+        <input type="text" v-model="first_name" value="">
+        <input type="text" v-model="last_name" value="">
+        <h3>
+          {{fullname}}
+        </h3>
+        <p>
+          Reversed name :
+          <h4>{{reverseName()}}</h4>
+        </p>
+
+        <div class="">
+          <input type="text" v-model="fullname" value="">
+        </div>
+
       </section>
 
+      <section>
+        <h3>Watchers</h3>
+        <p>
+          <input type="text" v-model="hero" value="">
+          {{hero_name}}
+        </p>
+      </section>
 
 
     </div>
     <script src="./libs/vue.js" charset="utf-8"></script>
-    <script src="./src/components.js" charset="utf-8"></script>
+    <script src="./src/computed-watchers.js" charset="utf-8"></script>
 
   </body>
 </html>
