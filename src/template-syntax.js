@@ -5,7 +5,19 @@ var app = new Vue({
     enableButton:false,
     sometext:"batman mostly works alone and doesn't care highly about what people think of him",
     number:10,
-    sex:'m'
+    sex:'m',
+    isMarked:true,
+    marked:'marked',
+    jsStyle:{
+      color:'red',
+      padding:'5px'
+    },
+    list:['one','two','three'],
+    person:{
+      first_name:'Sarath',
+      last_name:'TK'
+
+    }
   },
   filters: {
     capitalize: function (value) {

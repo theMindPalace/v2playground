@@ -8,6 +8,16 @@
       button:disabled{
         background: #ddd;
       }
+      .highlight{
+        background-color: yellow;
+        padding: 5px;
+      }
+      .marked{
+        background-color: #f56;
+        padding: 5px;
+        color: #fff;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
@@ -22,6 +32,7 @@
         <li><a href="components.html">Components</a></li>
         <li><a href="template-syntax.html">Template Syntax</a></li>
         <li><a href="computed-watchers.html">Computed & Watchers</a></li>
+        <li><a href="event-handling.html">Event Handling</a></li>
 
 
 
@@ -66,6 +77,64 @@
       <section>
         <h3>Filters</h3>
         {{sometext | capitalize | showlength }}
+      </section>
+
+      <section>
+        <h3>Bind Html Classses</h3>
+
+        <span v-bind:class="'highlight'">
+          Added highlight class
+        </span>
+        <p>
+          <input type="checkbox" v-model="isMarked" value="">
+          <span v-bind:class="{marked:isMarked}">
+            marked here
+          </span>
+        </p>
+
+      </section>
+
+      <section>
+        <h3>Bind Style</h3>
+        <span v-bind:style="jsStyle">
+
+          Hello this is dynamic style
+        </span>
+      </section>
+
+      <section>
+        <h3>List Rendering</h3>
+        <ul>
+          <li v-for="item in list">{{item}}</li>
+        </ul>
+        <h4>Item with index</h4>
+        <ul>
+          <li v-for="(item,index) in list">{{index}} --> {{item}}</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>With Template</h4>
+        <ul>
+          <template v-for="item in list">
+            <li>{{item}}</li>
+            <li>-----</li>
+          </template>
+        </ul>
+
+      </section>
+      <section>
+        <h3>Object listing</h3>
+        <ul>
+          <li v-for="(value,key,index) in person"> {{index}} --> {{key}} : {{value}}</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Range v-for</h3>
+        <ul>
+          <li v-for="i in 10">{{i}}</li>
+        </ul>
       </section>
 
 
