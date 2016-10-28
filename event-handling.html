@@ -41,6 +41,29 @@
 
       </section>
 
+      <section>
+        <button type="button" name="button" v-on:click="setName">Set You name </button>
+        <button type="button" name="button" v-on:click="greet('Have a nice day')">Greet me </button>
+      </section>
+
+      <section>
+        <h3>Event Modifires</h3>
+        <p>
+          v-on:click.prevent, v-on:click.stop, v-on:click.capture , v-on:click.self etc
+
+
+        </p>
+        <form class="" action="index.html" method="post" v-on:submit.prevent='formSubmit'>
+          <input type="name" v-model="name" value="">
+          <button type="submit" name="button">Submit</button>
+        </form>
+      </section>
+
+      <section>
+        <h3>Key Modifiers</h3>
+        <input type="text" name="name" v-on:keyup.13="hitEnter" value="">
+      </section>
+
 
 
 
