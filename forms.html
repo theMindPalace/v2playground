@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>v2</title>
+    <link rel="stylesheet" href="src/css/style.css" media="screen" title="no title">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Basic <span class="sr-only">(current)</span></a></li>
+        <li><a href="components.html">Components</a></li>
+        <li><a href="template-syntax.html">Template Syntax</a></li>
+        <li><a href="computed-watchers.html">Computed & Watchers</a></li>
+        <li><a href="event-handling.html">Event Handling</a></li>
+        <li><a href="forms.html">Forms</a></li>
+
+
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <div id="app" class="container">
+      <div class="page-header">
+        <h1>Forms </h1>
+      </div>
+
+      <section>
+        <div class="col-md-6">
+          <form class="" action="index.html" method="post">
+           <div class="form-group">
+             <label for="">Name</label>
+             <input type="text" v-model="name" value="">
+           </div>
+           <div class="form-group">
+             <label for="">Age</label>
+             <input type="number" v-model.number="age" value="">
+           </div>
+           <div class="form-group">
+             <label for="">Date Of Birth</label>
+             <input type="date" v-model="dob" value="">
+           </div>
+           <div class="form-group">
+             <label for="">Date Of Birth</label>
+             <textarea v-model="bio" rows="8" cols="40"></textarea>
+           </div>
+           <div class="form-group">
+             <label for="">Subscribe News leatter?</label>
+             <input type="checkbox" v-model="subscribe" value="">
+           </div>
+           <div class="form-group">
+             <label for="">Gender</label>
+             <input type="radio" v-model="gender" value="m"> Male
+             <input type="radio" v-model="gender" value="f"> Female
+           </div>
+           <div class="form-group">
+             <label for="">Subscribe News leatter?</label>
+             <label for=""><input type="checkbox" v-model="skills" value="php">PHP</label>
+             <label for=""><input type="checkbox" v-model="skills" value="javascript">Javascript</label>
+             <label for=""><input type="checkbox" v-model="skills" value="MySQL">MySQL</label>
+           </div>
+           <div class="form-group">
+             <label for="">Country</label>
+             <select type="date" v-model="country">
+               <option v-for="c in countryList" v-bind:value="c.id">{{c.name}}</option>
+             </select>
+           </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          Data
+          <pre>
+          {{$data }}
+          </pre>
+        </div>
+
+      </section>
+
+
+
+
+    </div>
+    <script src="./libs/vue.js" charset="utf-8"></script>
+    <script src="./src/forms.js" charset="utf-8"></script>
+
+  </body>
+</html>
