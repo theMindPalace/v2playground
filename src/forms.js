@@ -9,7 +9,8 @@ var forms = new Vue({
     countryList:[{name:"US",id:1},{name:"India",id:2}],
     subscribe:true,
     skills:[],
-    gender:'m'
+    gender:'m',
+    tvShows:[]
   },
   methods:{
 

@@ -72,6 +72,15 @@
                <option v-for="c in countryList" v-bind:value="c.id">{{c.name}}</option>
              </select>
            </div>
+           <div class="form-group">
+             <label for="">Tv Shows (Select multiple shows)</label>
+             <select class="form-control" v-model="tvShows" multiple>
+               <option>The Big Bang Theory</option>
+               <option>Sherlock</option>
+               <option>Man Vs Wild</option>
+               <option>Somewhere Streets</option>
+             </select>
+           </div>
           </form>
         </div>
         <div class="col-md-6">
@@ -80,6 +89,7 @@
           {{$data }}
           </pre>
         </div>
+        
 
       </section>
 
