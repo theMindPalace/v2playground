@@ -41,13 +41,33 @@ Vue.component('todo-list',{
 });
 
 
+/* Local component */
+
+var fruits = {
+  template:`<div>
+                <h1>fruits</h1>
+                <div v-if="fruitslist">
+                  <ul>
+                    <li v-for="fruit in fruitslist">{{fruit}}</li>
+                  </ul>
+                </div>
+                <div v-else> No Fruits </div>
+            </div>`,
+  props:['fruitslist']
+}
+
+
 
 /* The Main app */
 var app = new Vue({
   el:'#app',
   data:{
     pageTitle:'Components',
-    todoitems:['Goto store','Buy Milk']
+    todoitems:['Goto store','Buy Milk'],
+    fruitslist:['Apple','Orange']
+  },
+  components:{
+    fruits:fruits
   },
   beforeCreate:function(){
     console.info('Just before  create');
