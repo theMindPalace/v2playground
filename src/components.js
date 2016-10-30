@@ -41,7 +41,7 @@ Vue.component('todo-list',{
 });
 
 
-/* Local component */
+/* Local components */
 
 var fruits = {
   template:`<div>
@@ -56,6 +56,37 @@ var fruits = {
   props:['fruitslist']
 }
 
+var Counter = {
+  name:'counter',
+  template :`
+  <div v-bind:style="counterStyle">
+  <button v-on:click="increment">{{title}}</button>
+  <span>{{count}}</span>
+  </div>`,
+  data:function(){
+    return {
+      count:1,
+      counterStyle:{
+        border:'1px solid #f56',
+        padding:'2px',
+        width:'150px',
+        borderRadius:'3px'
+      }
+    }
+  },
+  props:{
+    title:{
+      type:String,
+      default:"Counter "
+    }
+  },
+  methods:{
+    increment:function(){
+      this.count++;
+    }
+  }
+}
+
 
 
 /* The Main app */
@@ -67,7 +98,8 @@ var app = new Vue({
     fruitslist:['Apple','Orange']
   },
   components:{
-    fruits:fruits
+    fruits:fruits,
+    counter:Counter
   },
   beforeCreate:function(){
     console.info('Just before  create');
